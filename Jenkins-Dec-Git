@@ -1,0 +1,37 @@
+pipeline{
+  agent any
+    environment{
+      Path = "/opt/apache-maven-3.6.3/bin:$PATH"
+      }
+     stages{
+      stage("Welcome"){
+        steps{
+        echo "Welcome to Declarative pipline script"
+         }
+       }
+       stage("git-hub"){
+       steps{
+          git credentialsId: 'github', url: 'https://github.com/prakashmankena/hello-world/'
+          }
+          }
+       stage("MVN-Build"){
+       steps{
+          sh "mvn clean package"
+          sh "mv target/*.war target/miweb.war"
+          }
+          }
+          stage("Deploy on SSH tomcat"){
+            steps{
+              sshagent(['tomcat-user']) {
+                sh """
+                  scp -o StrictHostKeyChecking=no target/myweb.war root@172.31.42.203:/opt/apache-maven-3.6.3/webapps/
+                  
+                  ssh root@172.31.42.203 shutdown.sh
+                  
+                  ssh root@172.31.42.203 startup.sh 
+               """
+               }
+               }
+               }
+          }
+          }
