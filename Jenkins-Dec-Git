@@ -11,7 +11,7 @@ pipeline{
        }
        stage("git-hub"){
        steps{
-          git credentialsId: 'github', url: 'https://github.com/prakashmankena/hello-world/'
+          git credentialsId: 'github', url: 'https://github.com/prakashmankena/myweb.git'
           }
           }
        stage("MVN-Build"){
