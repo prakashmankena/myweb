@@ -22,7 +22,7 @@ pipeline{
                             }
           stage("MVN-Deploy"){
                           steps{
-                          sshagent(['tomcat-user']) {
+                          sshagent(['tomcat-server']) {
                           sh """
                               scp -o StrictHostKeyChecking=no target/myfile.war ec2-user@3.22.166.4:/opt/apache-tomcat-9.0.34/webapps/
                               
