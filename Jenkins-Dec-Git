@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-      PATH = "/opt/apache-maven-3.6.3/bin:$PATH
+      PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
       }
      stages{
           stage("Welcome"){
@@ -17,7 +17,7 @@ pipeline{
           stage("MVN-Build"){
                         steps{
                             sh "mvn clean package"
-                            sh "mv target/*.war target/myfile.war
+                            sh "mv target/*.war target/myfile.war "
                             }
                             }
           stage("MVN-Deploy"){
@@ -29,6 +29,7 @@ pipeline{
                               ssh root@3.22.166.4 shutdown.sh
                               
                               ssh root@3.22.166.4 startup.sh
+                             """
                               }
                               }
                               
