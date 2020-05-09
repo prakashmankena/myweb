@@ -4,7 +4,7 @@ pipeline{
       PATH = "/opt/apache-maven-3.6.3/bin:$PATH
       }
      stages{
-          stage("Welocome"){
+          stage("Welcome"){
                         steps{
                             echo "Welcome to Jenkins Declarative Pipeline Script"
                             }
