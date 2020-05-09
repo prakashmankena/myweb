@@ -1,37 +1,39 @@
 pipeline{
-  agent any
+    agent any
     environment{
-      Path = "/opt/apache-maven-3.6.3/bin:$PATH"
+      PATH = "/opt/apache-maven-3.6.3/bin:$PATH
       }
      stages{
-      stage("Welcome"){
-        steps{
-        echo "Welcome to Declarative pipline script"
-         }
-       }
-       stage("git-hub"){
-       steps{
-          git credentialsId: 'github', url: 'https://github.com/prakashmankena/myweb.git'
-          }
-          }
-       stage("MVN-Build"){
-       steps{
-          sh "mvn clean package"
-          sh "mv target/*.war target/miweb.war"
-          }
-          }
-          stage("Deploy on SSH tomcat"){
-            steps{
-              sshagent(['tomcat-user']) {
-                sh """
-                  scp -o StrictHostKeyChecking=no target/myweb.war root@172.31.42.203:/opt/apache-maven-3.6.3/webapps/
-                  
-                  ssh root@172.31.42.203 shutdown.sh
-                  
-                  ssh root@172.31.42.203 startup.sh 
-               """
-               }
-               }
-               }
-          }
-          }
+          stage("Welocome"){
+                        steps{
+                            echo "Welcome to Jenkins Declarative Pipeline Script"
+                            }
+                            }
+          stage("Git-Hub"){
+                        steps{
+                            git credentialsId: 'github', url: 'https://github.com/prakashmankena/myweb'
+                            }
+                            }
+          stage("MVN-Build"){
+                        steps{
+                            sh "mvn clean package"
+                            sh "mv target/*.war target/myfile.war
+                            }
+                            }
+          stage("MVN-Deploy"){
+                          steps{
+                          sshagent(['tomcat-user']) {
+                          sh """
+                              scp -o StrictHostKeyChecking=no target/myfile.war root@3.22.166.4:/opt/apache-tomcat-9.0.34/webapps/
+                              
+                              ssh root@3.22.166.4 shutdown.sh
+                              
+                              ssh root@3.22.166.4 startup.sh
+                              }
+                              }
+                              
+             }
+        }
+                                
+                        
+                            
