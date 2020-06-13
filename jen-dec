@@ -1,0 +1,12 @@
+pipieline{
+  agent any 
+  stages{
+    stage("MVN-Packaeg"){
+      steps{
+          sh "mvn clean"
+      }
+      
+    }
+    
+  }
+}
