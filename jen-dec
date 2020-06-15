@@ -4,9 +4,20 @@ pipeline{
     PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
   }
   stages{
+    stage("Welcome"){
+      steps{
+        echo "Welcome to Jenkins declarativve"
+      }
+    }
+    stage("GIT-CHECKOUT"){
+      steps{
+        git credentialsId: 'git', url: 'https://github.com/prakashmankena/myweb'
+          
+      }
+    }
     stage("MVN-Packaeg"){
       steps{
-          sh "mvn clean"
+          sh "mvn clean compile package "
       }
       
     }
