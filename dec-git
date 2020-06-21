@@ -1,0 +1,12 @@
+currentBuild.displayName = "HDFCIT1-#"+currentBuild.number
+pipeline{
+      agent any 
+      stages{
+        stage("Welcome"){
+          steps{
+            echo "Welcome Git-Hub"
+          }
+        
+        }
+      }
+}
