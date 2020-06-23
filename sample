@@ -9,7 +9,7 @@ pipeline{
                 }
            stage("GIT-HUB"){
             steps{
-                sh 'git credentialsId: 'd5702d17-51c9-480a-8e9e-ffbb4687d784', url: 'https://github.com/prakashmankena/myweb''
+                 git credentialsId: 'd5702d17-51c9-480a-8e9e-ffbb4687d784', url: 'https://github.com/prakashmankena/myweb'
                  }
               }
           }
