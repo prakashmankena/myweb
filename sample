@@ -1,20 +1,16 @@
+currentBuild.displayName = "YESBANKIT-#"+currentBuild.number
 pipeline{
-        agent any 
+       agent any 
         stages{
-        
-          stage("WELCOME"){
+           stage("WELCOME"){
             steps{
                 echo "WELCOME TO GIT-HUB"
-            }
-          
-          }
-          stage("GIT-HUB"){
+                    }
+                }
+           stage("GIT-HUB"){
             steps{
                 sh 'git credentialsId: 'd5702d17-51c9-480a-8e9e-ffbb4687d784', url: 'https://github.com/prakashmankena/myweb''
-            }
-          
+                 }
+              }
           }
-          
-        
-        }
 }
