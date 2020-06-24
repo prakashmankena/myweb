@@ -12,5 +12,11 @@ pipeline{
                  git credentialsId: 'd5702d17-51c9-480a-8e9e-ffbb4687d784', url: 'https://github.com/prakashmankena/myweb'
                  }
               }
+            stage("BUILD"){
+              steps{
+                     sh 'mvn clean'
+              
+              }
+            }
           }
 }
