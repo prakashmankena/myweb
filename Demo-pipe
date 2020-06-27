@@ -26,6 +26,14 @@ pipeline{
         sh "mvn clean compile package"
         }
       }
+      
+    stage("EMAIL-NOTIFICATION"){
+      steps{
+        mail bcc: '', body: '''Hi This Is Jenkins Job Build For HDFCIT-1 Alert
+        Regards
+        Prakash ManKena ''', cc: '', from: '', replyTo: '', subject: 'Jenkins-Job', to: 'prakash844398@gmail.com'
+      }
+    }
     
     
        
