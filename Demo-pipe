@@ -2,9 +2,8 @@ currentBuild.displayName = "HDFCIT1-#"+currentBuild.number
 
 pipeline{
   agent any
-  environment{
-  PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
-  }
+  def mvnHome = tool name: 'mvn-3.0', type: 'maven'
+  sh "${mvnHome}/bin/mvn clean"
   stages{
     stage("WELCOME"){\
       steps{
