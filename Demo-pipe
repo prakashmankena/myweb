@@ -1,0 +1,20 @@
+currentBuild.displayName = "HDFCIT1-#"+currentBuild.number
+
+pipeline{
+  agent any
+  stages{
+    stage("WELCOME"){\
+      steps{
+      
+        echo "WELCOME to Jenkins Declrative Pipeline"
+        
+        }
+       }
+       
+  
+  
+  }
+
+
+
+}
