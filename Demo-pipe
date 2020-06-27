@@ -2,8 +2,6 @@ currentBuild.displayName = "HDFCIT1-#"+currentBuild.number
 
 pipeline{
   agent any
-  def mvnHome = tool name: 'mvn-3.0', type: 'maven'
-  sh "${mvnHome}/bin/mvn clean"
   stages{
     stage("WELCOME"){\
       steps{
@@ -21,8 +19,9 @@ pipeline{
      
     stage("BUILD"){
       steps{
-        sh "mvn clean"
-      }
+        def mvnHome = tool name: 'mvn-3.0', type: 'maven'
+        sh "${mvnHome}/bin/mvn clean"
+              }
     
     }
        
