@@ -4,8 +4,8 @@
 	
 	<h1 style="color: gray; font-size: 60px;" align="center"> PRAKASH MANKENA </h1>
 	
-	<h1 style="color: gray; font-size: 60px; align="center"> DevOps Engineer </h1>
+	<h1 style="color: gray; font-size: 60px;" align="center"> DevOps Engineer </h1>
 	
-        <h1 style="color: gray; font-size: 80px; align="center"> Oracle </h1>						       
+        <h1 style="color: gray; font-size: 80px;" align="center"> Oracle </h1>						       
 </body>
 </html>
