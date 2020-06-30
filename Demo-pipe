@@ -31,15 +31,14 @@ pipeline{
       stage("Deploy-Tomcat"){
         steps{
           sshagent(['tomcat']) {
-                  sh """
-                    scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/webapps/
+                  sh "scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/webapps/"
                     
-                    ssh ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/bin/shutdown.sh
+                  sh "ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/bin/shutdown.sh"
                     
-                    ssh ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/bin/startup.sh
+                  sh "ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/bin/startup.sh"
                     
                     
-                  """
+                  
 
           }
         }
