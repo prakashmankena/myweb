@@ -38,10 +38,10 @@ pipeline{
         Prakash Mankena
         ''', cc: '', from: '', replyTo: '', subject: 'Build', to: 'prakash844398@gmail.com'
      
-     }
+         }
      
-     1}
-     }
+         }
+     
     }
 
 }
