@@ -1,4 +1,7 @@
 currentBuild.displayName = "HDFCIT1-#"+currentBuild.number
+environment{
+PATH = "/opt/apache-maven-3.6.3/bin/mvn"
+}
 pipeline{
     agent any
     stages{
