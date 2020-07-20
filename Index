@@ -2,8 +2,10 @@ currentBuild = "currentBuild.displayName"+currentBuild.number
 pipeline{
 agent any 
   steps{
-    steps("Wel-Come"){
-    echo "Welcome To Declrative Pipeline"
+    step("Wel-Come"){
+      stage{
+        echo "Welcome To Declrative Pipeline"
     }
+   }
   }
 }
