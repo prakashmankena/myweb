@@ -20,12 +20,13 @@ pipeline{
     stage("BUILD"){
       steps{
         sh "mvn clean compile "
+        sh "mv target/*.war target/myflex.war
       }
     }
     stage("DEPLOY"){
       steps{
         sshagent(['tomcat']) {
-            sh 'scp -o StrictHostKeyChecking=no  target/*.war ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/webapps'
+            sh 'scp -o StrictHostKeyChecking=no  target/myflex.war ec2-user@172.31.35.122:/opt/apache-tomcat-9.0.36/webapps'
           }
       }
     }
