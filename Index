@@ -1,4 +1,7 @@
 currentBuild.displayName = "HDFCIT1-#"+currentBuild.number
+environment{
+  PATH = "/opt/apache-maven-3.6.3:bin/$PATH"
+}
 pipeline{
   agent any
   stages{
@@ -11,6 +14,12 @@ pipeline{
     stage("Git-Clone"){
       steps{
         git credentialsId: 'git', url: 'https://github.com/prakashmankena/myweb/'
+      }
+    }
+    
+    stage("MVN-Package"){
+      steps{
+        sh "mvn clean"
       }
     }
   }
