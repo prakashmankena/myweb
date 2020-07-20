@@ -1,11 +1,13 @@
-currentBuild = "currentBuild.displayName"+currentBuild.number
+curent.buildName = "HDFCIT1+"curent.number
 pipeline{
-agent any 
-  steps{
-    step("Wel-Come"){
-      stage{
-        echo "Welcome To Declrative Pipeline"
+  agent any
+  stages{
+    stage("Wel-Come"){
+      steps{
+        echo "Welcome to Jenkins Build Pipeline"
+      }
+    
     }
-   }
   }
+
 }
