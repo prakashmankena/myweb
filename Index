@@ -24,7 +24,9 @@ pipeline{
     }
     stage("DEPLOY"){
       steps{
-        
+        sshagent(['tomcat']) {
+            sh 'scp -o StrictHostKeyChecking=no  /target/*.war 
+          }
       }
     }
   }
