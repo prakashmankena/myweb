@@ -5,9 +5,8 @@ pipeline{
     stage("Wel-Come"){
       steps{
         echo "Welcome to Jenkins Build Pipeline"
-      }
-    
-    }
+     }
+   }
   }
 
 }
