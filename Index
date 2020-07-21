@@ -23,6 +23,7 @@ pipeline{
         sh "mv target/*.war target/myflex.war"
       }
     }
+    
     stage("DEPLOY"){
       steps{
         sshagent(['tomcat']) {
@@ -40,7 +41,8 @@ pipeline{
         to: 'prakash844398@gmail.com'
       }
      }
-    }
+     
+    
   }
 
 }
