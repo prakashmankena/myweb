@@ -38,7 +38,9 @@ pipeline{
         Notification 
 
         Regards
-        Prakash Mankena''', cc: '', from: '', replyTo: '', subject: 'Jenkins Build ', to: 'prakash844398@gmail.com'
+        Prakash Mankena''', cc: '', from: '', replyTo: '',
+        subject: 'Jenkins Build ',
+        to: 'prakash844398@gmail.com'
       }
      }
      
