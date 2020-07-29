@@ -1,4 +1,4 @@
-currentBuild.displayName="HDFCIT1-#"+currentBuild.name
+currentBuild.displayName="HDFCIT1-#"+currentBuild.number
 pipeline{
   agent any
   environment{
