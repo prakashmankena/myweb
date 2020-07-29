@@ -2,7 +2,7 @@ currentBuild.displayName="HDFCIT1-#"+currentBuild.name
 pipeline{
   agent any{
     enivornment{
-    PATH = "/opt/apache-maven-3.6.3/bin:$PATH
+    PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
     }
   stages{
     stage("Wel-Come"){
