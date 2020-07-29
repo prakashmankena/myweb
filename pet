@@ -20,7 +20,7 @@ pipeline{
     stage("Build-WAR"){
       steps{
         sh "mvn clean compile package"
-        sh "mv target/*war /target/flex.war"
+        sh "mv target/*.war /target/flex.war"
       }
     }
     
