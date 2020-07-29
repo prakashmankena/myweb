@@ -19,7 +19,16 @@ pipeline{
     
     stage("Build-WAR"){
       steps{
-        sh "mvn clean"
+        sh "mvn clean compile package"
+        sh "mv target/*war /target/flex.war"
+      }
+    }
+    
+    stage("Deploy-Tomcat"){
+      steps{
+      sshagent(['ssh-t']) {
+          sh 'ssh -o StrictHostKeyChecking=no /target/*war root@172.31.32.251:/opt/apache-tomcat-8.5.57/webapps/"
+        }
       }
     }
   }
