@@ -11,6 +11,16 @@ pipeline{
         }
       }
       
+    stage("GIT-CLone"){
+      steps{
+        git credentialsId: 'Git-Hub', url: 'https://github.com/prakashmankena/myweb/'
+      }
+    }
     
+    stage("Build-WAR"){
+      steps{
+        sh "mvn clean"
+      }
+    }
   }
 }
