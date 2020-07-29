@@ -27,7 +27,7 @@ pipeline{
     stage("Deploy-Tomcat"){
       steps{
       sshagent(['ssh-login']) {
-          sh 'scp -o StrictHostKeyChecking=no target/flex.war ec2-user@172.31.32.251:/opt/apache-tomcat-8.5.57/webapps'
+          sh 'scp -o StrictHostKeyChecking=no target/flex.war root@172.31.32.251:/opt/apache-tomcat-8.5.57/webapps'
         }
       }
     }
