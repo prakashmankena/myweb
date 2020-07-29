@@ -1,6 +1,6 @@
 currentBuild.displayName="HDFCIT1-#"+currentBuild.name
 pipeline{
-  agent any{
+  any agent{
     enivornment{
     PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
     }
